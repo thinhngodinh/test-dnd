@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classnames from 'classnames';
 
 interface IProps {
@@ -7,7 +7,7 @@ interface IProps {
   draggable?: true;
   onDragStart?(e: React.DragEvent<HTMLElement>):void,
   children?: any
-};
+}
 
 export const DraggableItem = ({isOverlaped, className, draggable, children, onDragStart, ...props}: IProps) => {
   const computedClassName = classnames(
@@ -23,8 +23,7 @@ export const DraggableItem = ({isOverlaped, className, draggable, children, onDr
     requestAnimationFrame(() => {
       el.classList.add('hidden'); 
     });
-    
-    e.dataTransfer.effectAllowed = "move";
+    e.dataTransfer.effectAllowed = 'move';
     e.dataTransfer.setData("text/html", el.outerHTML);
     if (onDragStart) {
       onDragStart(e)

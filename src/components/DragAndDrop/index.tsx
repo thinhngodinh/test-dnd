@@ -17,6 +17,6 @@ const DnD = (props: IProps) => {
       </div>
     </div>
   );
-};
+}
 
 export default DnD;
